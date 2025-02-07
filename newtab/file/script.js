@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Special handling for specific queries
         if (query === 'game') {
-            window.open('https://mellekoster.nl/wishulp/breuken/', '_blank');
+            window.location.href = 'https://mellekoster.nl/wishulp/breuken/';
             searchInput.value = '';
             return;
         }
 
         if (query === 'melle') {
-            window.open('https://mellekoster.nl', '_blank');
+            window.location.href = 'https://mellekoster.nl';
             searchInput.value = '';
             return;
         }
@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isValidUrl && !query.startsWith('http://') && !query.startsWith('https://')) {
                 // If it's a valid URL without protocol, add https
                 searchUrl = `https://${query}`;
-                window.open(searchUrl, '_blank');
+                window.location.href = searchUrl;
             } else if (isValidUrl) {
                 // If it's a full URL, open it directly
-                window.open(query, '_blank');
+                window.location.href = query;
             } else {
                 // Perform search based on selected search engine
                 switch(currentEngine) {
@@ -105,10 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 'crazygames':
                         searchUrl = `https://www.crazygames.com/search?q=${encodeURIComponent(query)}`;
                         break;
+                    case 'github':
+                        searchUrl = `https://github.com/search?q=${encodeURIComponent(query)}`;
+                        break;
                     default:
                         searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
                 }
-                window.open(searchUrl, '_blank');
+                window.location.href = searchUrl;
             }
 
             // Clear input after search
