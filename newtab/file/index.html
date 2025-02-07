@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FOAM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="foam-title">FOAM</div>
+        <div class="search-container">
+            <div class="search-engine-selector" id="searchEngineSelector">
+                <div class="selected-engine" id="selectedEngine">
+                    <span id="engineName">DuckDuckGo</span>
+                </div>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search or type a URL" autocomplete="off">
+            <button id="searchButton">Go</button>
+        </div>
+        <div class="engine-dropdown-modal" id="engineDropdownModal">
+            <div class="engine-dropdown" id="engineDropdown">
+                <div class="engine-option" data-engine="duckduckgo">
+                    DuckDuckGo
+                </div>
+                <div class="engine-option" data-engine="google">
+                    Google
+                </div>
+                <div class="engine-option" data-engine="bing">
+                    Bing
+                </div>
+                <div class="engine-option" data-engine="yahoo">
+                    Yahoo
+                </div>
+                <div class="engine-option" data-engine="ecosia">
+                    Ecosia
+                </div>
+                <div class="engine-option" data-engine="brave">
+                    Brave
+                </div>
+                <div class="engine-option" data-engine="yandex">
+                    Yandex
+                </div>
+                <div class="engine-option" data-engine="startpage">
+                    Startpage
+                </div>
+                <div class="engine-option" data-engine="wikipedia">
+                    Wikipedia
+                </div>
+                <div class="engine-option" data-engine="crazygames">
+                    Crazygames
+                </div>
+            </div>
+        </div>
+        <div class="quick-links" id="quickLinks"></div>
+        <div class="clock" id="clock"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
