@@ -4,6 +4,8 @@
     <title>FOAM</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -56,7 +58,121 @@
         </div>
         <div class="quick-links" id="quickLinks"></div>
         <div class="clock" id="clock"></div>
+        
+        <div class="settings-button" id="settingsButton">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+                <path d="M0 0h24v24H0V0z" fill="none"/>
+                <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49 1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.64-.07.98 0 .34.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+            </svg>
+        </div>
+
+        <!-- Settings Menu -->
+        <div class="settings-menu" id="settingsMenu">
+            <div class="settings-menu-wrapper">
+                <div class="settings-sidebar">
+                    <div class="settings-sidebar-item active" data-section="login">Login</div>
+                    <div class="settings-sidebar-item" data-section="wallpaper">Wallpaper</div>
+                    <div class="settings-sidebar-item" data-section="music">Music</div>
+                </div>
+                <div class="settings-menu-content">
+                    <div class="settings-section login active">
+                        <h2>Login</h2>
+                        <div class="settings-subsection">
+                            <h3>Username</h3>
+                            <input type="text" id="loginUsername" placeholder="Enter username">
+                            <h3>Password</h3>
+                            <input type="password" id="loginPassword" placeholder="Enter password">
+                            <button id="loginButton">Login</button>
+                            <p id="loginMessage"></p>
+                        </div>
+                    </div>
+                    <div class="settings-section wallpaper">
+                        <h2>Wallpaper Settings</h2>
+                        <div class="settings-subsection">
+                            <h3>Background</h3>
+                            <div class="upload-area" id="uploadArea">
+                                <input type="text" id="backgroundUrlInput" placeholder="Enter background image URL" disabled>
+                                <div class="drag-drop-zone" id="dragDropZone">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48px" height="48px">
+                                        <path d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
+                                    </svg>
+                                    <p>Drag and drop image here or click to upload</p>
+                                    <input type="file" id="fileUpload" accept="image/*" style="display:none;">
+                                </div>
+                            </div>
+                            <h3>Default Wallpapers</h3>
+                            <div class="wallpaper-grid" id="defaultWallpapers">
+                                <div class="wallpaper-option" data-url="https://wallpapercave.com/wp/wp7092497.jpg">
+                                    <img src="https://wallpapercave.com/wp/wp7092497.jpg" alt="Wallpaper 1">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://fixthephoto.com/images/content/color-overlay-photoshop-21610367014.jpg">
+                                    <img src="https://fixthephoto.com/images/content/color-overlay-photoshop-21610367014.jpg" alt="Wallpaper 2">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://www.enchanted.media/wp-content/uploads/2022/04/Free-Light-Leaks-Film-Burn-Overlay-Warm.png">
+                                    <img src="https://www.enchanted.media/wp-content/uploads/2022/04/Free-Light-Leaks-Film-Burn-Overlay-Warm.png" alt="Wallpaper 3">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://fixthephoto.com/images/content/free-photoshop-color-overlay-effects-141610367237.jpg">
+                                    <img src="https://fixthephoto.com/images/content/free-photoshop-color-overlay-effects-141610367237.jpg" alt="Wallpaper 4">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://wallpaperaccess.com/full/3170687.jpg">
+                                    <img src="https://wallpaperaccess.com/full/3170687.jpg" alt="Wallpaper 5">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://wallpaperaccess.com/full/3170267.jpg">
+                                    <img src="https://wallpaperaccess.com/full/3170267.jpg" alt="Wallpaper 6">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://wallpaperaccess.com/full/3170275.jpg">
+                                    <img src="https://wallpaperaccess.com/full/3170275.jpg" alt="Wallpaper 7">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://wallpaperaccess.com/full/2740060.jpg">
+                                    <img src="https://wallpaperaccess.com/full/2740060.jpg" alt="Wallpaper 8">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://wallpaperaccess.com/full/31190.jpg">
+                                    <img src="https://wallpaperaccess.com/full/31190.jpg" alt="Wallpaper 9">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://wallpaperaccess.com/full/31191.jpg">
+                                    <img src="https://wallpaperaccess.com/full/31191.jpg" alt="Wallpaper 10">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://wallpaperaccess.com/full/31193.jpg">
+                                    <img src="https://wallpaperaccess.com/full/31193.jpg" alt="Wallpaper 11">
+                                </div>
+                                <div class="wallpaper-option" data-url="https://wallpaperaccess.com/full/2795.jpg">
+                                    <img src="https://wallpaperaccess.com/full/2795.jpg" alt="Wallpaper 12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings-section music">
+                        <h2>Music Settings</h2>
+                        <div class="settings-subsection">
+                            <h3>Upload Music</h3>
+                            <div class="music-upload-area" id="musicUploadArea">
+                                <input type="text" id="musicUrlInput" placeholder="Enter music file URL or YouTube link">
+                                <div class="drag-drop-zone music-drag-drop-zone" id="musicDragDropZone">
+                                    <i class="fas fa-music"></i>
+                                    <p>Drag and drop music file here or click to upload</p>
+                                    <input type="file" id="musicFileUpload" accept="audio/*" style="display:none;">
+                                </div>
+                            </div>
+                            <div class="music-player" id="musicPlayer">
+                                <audio id="audioPlayer" controls style="display:none;"></audio>
+                                <div id="youtubePlayerContainer" style="display:none;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings-actions">
+                        <button id="saveSettingsButton" disabled>Save</button>
+                        <button id="closeSettingsButton">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
+    <div id="contextMenu" class="context-menu">
+        <div class="context-menu-item" id="giveFeedback">Give Feedback</div>
+        <div class="context-menu-item" id="viewSource">View Source</div>
+        <div class="context-menu-item" id="viewSite">View Site</div>
+    </div>
 </body>
 </html>
